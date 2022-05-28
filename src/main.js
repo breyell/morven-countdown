@@ -1,10 +1,12 @@
-import { createApp } from 'vue'
-import VueCountdown from '@chenfengyuan/vue-countdown';
+import { createApp } from "vue";
+import VueCountdown from "@chenfengyuan/vue-countdown";
 
-import App from './App.vue'
+import "normalize.css/normalize.css";
 
-const app = createApp(App)
+import App from "./App.vue";
 
-app.component('vue-countdown', VueCountdown)
+const app = createApp(App);
 
-app.mount('#app')
+app.component("vue-countdown", VueCountdown);
+
+app.mount("#app");
