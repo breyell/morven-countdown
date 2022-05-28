@@ -1,42 +1,42 @@
 <script setup>
-import axios from "axios";
-import { onMounted, ref, computed } from "vue";
-let facts = ref(undefined);
+import axios from 'axios'
+import { onMounted, ref, computed } from 'vue'
+let facts = ref(undefined)
 
 const props = defineProps({
   days: Number,
   hours: Number,
   minutes: Number,
   seconds: Number,
-});
+})
 
 onMounted(() => {
-  getData();
+  getData()
 
   setInterval(() => {
     if (props.minutes === 59) {
-      getData();
-      console.log("getting data!");
+      getData()
+      console.log('getting data!')
     }
-  }, 60000); // run once per minute
-});
+  }, 60000) // run once per minute
+})
 
 let currentFact = computed(() => {
   if (!facts.value) {
-    return null;
+    return null
   }
 
-  return facts.value.facts.find((fact) => fact.daysRemaining === props.days);
-});
+  return facts.value.facts.find((fact) => fact.daysRemaining === props.days)
+})
 
 let getData = () => {
   axios
     // .get("http://localhost:3001/facts") //  /for testing
     .get(
-      "https://api.sheety.co/20ee3c95295b1712249da847304fdce8/factSheet/facts"
+      'https://api.sheety.co/20ee3c95295b1712249da847304fdce8/factSheet/facts'
     )
-    .then((response) => (facts.value = response.data));
-};
+    .then((response) => (facts.value = response.data))
+}
 </script>
 
 <template>
