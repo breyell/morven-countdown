@@ -14,11 +14,11 @@ onMounted(() => {
   getData()
 
   setInterval(() => {
-    if (props.minutes === 59) {
+    if (props.hours === 1) {
       getData()
       console.log('getting data!')
     }
-  }, 60000) // run once per minute
+  }, 60 * 60 * 1000) // run once per hour
 })
 
 let currentFact = computed(() => {
