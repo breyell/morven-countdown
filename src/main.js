@@ -7,6 +7,6 @@ import App from "./App.vue";
 
 const app = createApp(App);
 
-app.component("vue-countdown", VueCountdown);
+app.component("VueCountdown", VueCountdown);
 
 app.mount("#app");

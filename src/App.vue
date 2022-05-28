@@ -9,7 +9,7 @@ let time = ref(targetDate - now);
 </script>
 
 <template>
-  <vue-countdown
+  <VueCountdown
     :time="time"
     v-slot="{ days, hours, minutes, seconds }"
     class="container"
@@ -21,7 +21,7 @@ let time = ref(targetDate - now);
       :minutes="minutes"
       :seconds="seconds"
     />
-  </vue-countdown>
+  </VueCountdown>
 </template>
 
 <style scoped>
